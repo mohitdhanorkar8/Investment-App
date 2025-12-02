@@ -1,0 +1,200 @@
+.investement-page {
+    padding: 32px 24px;
+    background: linear-gradient(135deg, #f0f4f9 0%, #e0e7ef 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+    color: #2a3a5e;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 32px;
+    gap: 24px;
+}
+
+.summary-item {
+    flex: 1;
+    padding: 20px 16px;
+    text-align: center;
+    border: none;
+    border-radius: 16px;
+    margin: 0 10px;
+    background: linear-gradient(120deg, #e3f0ff 0%, #f9f9f9 100%);
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.1em;
+}
+.summary-item:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.12);
+}
+
+.label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #3a4a6b;
+    font-size: 1.08em;
+}
+
+.value {
+    font-size: 1.35em;
+    font-weight: 700;
+    color: #1a2a4a;
+    letter-spacing: 0.5px;
+}
+.positive {
+    color: #1bbf5c;
+}
+.negative {
+    color: #e74c3c;
+}
+
+.card-body .value.positive {
+    color: #1bbf5c !important;
+    background: rgba(27, 191, 92, 0.08);
+    border-radius: 8px;
+    padding: 2px 8px;
+    transition: background 0.2s;
+}
+.card-body .value.negative {
+    color: #e74c3c !important;
+    background: rgba(231, 76, 60, 0.08);
+    border-radius: 8px;
+    padding: 2px 8px;
+    transition: background 0.2s;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: none;
+    border-radius: 16px;
+    margin-bottom: 18px;
+    background: linear-gradient(120deg, #f7faff 0%, #eaf1fb 100%);
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10);
+    display: inline-block;
+    width: 23%;
+    min-width: 260px;
+    margin-right: 1%;
+    box-sizing: border-box;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(44, 62, 80, 0.16);
+}
+
+.card-header {
+    padding: 18px 20px 12px 20px;
+    border-bottom: 1px solid #e3eaf2;
+    background: #e3f0ff;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-header .name {
+    font-size: 1.18em;
+    font-weight: 600;
+    color: #2a3a5e;
+}
+.card-header .badge {
+    background: #1bbf5c;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(27, 191, 92, 0.10);
+}
+
+/* Investment type color classes */
+.card-header .badge.equity {
+    background: #4f8cff;
+}
+.card-header .badge.debt {
+    background: #ffb84f;
+}
+.card-header .badge.realestate {
+    background: #e74c3c;
+}
+.card-header .badge.gold {
+    background: #ffd700;
+    color: #333;
+}
+.card-header .badge.crypto {
+    background: #8e44ad;
+}
+.card-header .badge.other {
+    background: #7f8c8d;
+}
+
+.card-body {
+    padding: 18px 20px;
+    background: #fff;
+    border-radius: 0 0 16px 16px;
+}
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+.card-body .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 12px;
+}
+.card-body .label {
+    font-weight: 600;
+    color: #3a4a6b;
+    font-size: 1em;
+}
+.card-body .value {
+    font-size: 1.13em;
+    color: #1a2a4a;
+    font-weight: 700;
+}
+
+.banner-loading {
+    background: #e3f0ff;
+    color: #2a3a5e;
+    padding: 14px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 18px;
+}
+.banner-error {
+    background: #ffe3e3;
+    color: #e74c3c;
+    padding: 14px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.15em;
+    margin-bottom: 18px;
+}

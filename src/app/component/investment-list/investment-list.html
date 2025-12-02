@@ -1,0 +1,22 @@
+<div class="investment-container">
+    <!-- Search Investment by ID -->
+
+    <!-- Top card -->
+    <!-- <div class="top-card">
+        <h2>Fetch Investment List</h2>
+        <button (click)="displayAllMyInvestments()">Fetch Investment</button>
+    </div> -->
+
+    <!-- Cards grid -->
+    <div class="cards-grid">
+        @for (investment of allInvestmentList(); track $index) {
+        <div class="card">
+            <h3>{{ investment.name }}</h3>
+            <p>Price: {{ investment.amount }}</p>
+            <p>Actual Price: {{ investment.currentValue }}</p>
+            <p class="delete" (click)="deleteInvestment(investment.id)">Delete</p>
+            <p class="update" (click)="updateInvestment(investment.id)">Edit</p>
+        </div>
+        }
+    </div>
+</div>

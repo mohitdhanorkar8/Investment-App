@@ -1,0 +1,96 @@
+<div class="add-investment-container">
+  <h1>{{investmentId() ? 'Update': 'Add'}} Investment</h1>
+  <form #investmentForm="ngForm" (ngSubmit)="investmentId()? onUpdate(): onSubmit(investmentForm)">
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="investment().name"
+        required
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && name.touched" class="error">
+        Name is required.
+      </div>
+    </div>
+
+    <!-- Type Field -->
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select
+        id="type"
+        name="type"
+        class="form-control"
+        [(ngModel)]="investment().type"
+        required
+        #type="ngModel"
+      >
+        <option value="" disabled>Select Type</option>
+        <option *ngFor="let option of investmentTypes" [value]="option">{{ option }}</option>
+      </select>
+      <div *ngIf="type.invalid && type.touched" class="error">
+        Type is required.
+      </div>
+    </div>
+
+    <!-- Amount Field -->
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        class="form-control"
+        [(ngModel)]="investment().amount"
+        required
+        #amount="ngModel"
+      />
+      <div *ngIf="amount.invalid && amount.touched" class="error">
+        Amount is required.
+      </div>
+    </div>
+
+    <!-- Purchase Date Field -->
+    <div class="form-group">
+      <label for="purchaseDate">Purchase Date</label>
+      <input
+        type="date"
+        id="purchaseDate"
+        name="purchaseDate"
+        class="form-control"
+        [(ngModel)]="investment().purchaseDate"
+        required
+        #purchaseDate="ngModel"
+      />
+      <div *ngIf="purchaseDate.invalid && purchaseDate.touched" class="error">
+        Purchase Date is required.
+      </div>
+    </div>
+
+    <!-- Current Value Field -->
+    <div class="form-group">
+      <label for="currentValue">Current Value</label>
+      <input
+        type="number"
+        id="currentValue"
+        name="currentValue"
+        class="form-control"
+        [(ngModel)]="investment().currentValue"
+        required
+        #currentValue="ngModel"
+      />
+      <div *ngIf="currentValue.invalid && currentValue.touched" class="error">
+        Current Value is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="investmentForm.invalid">
+      {{investmentId() ?'Update' :'Submit'}}
+    </button>
+  </form>
+</div>

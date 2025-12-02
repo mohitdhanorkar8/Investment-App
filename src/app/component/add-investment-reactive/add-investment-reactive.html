@@ -1,0 +1,89 @@
+<h2>Add Fresh Investment</h2>
+
+<!-- <nav style="margin-bottom: 1rem;">
+    <a routerLink="/investment-list">Back to Investment List</a>
+</nav> -->
+
+<form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+        <label for="name">ID:</label>
+        <input type="number" id="name" formControlName="id">
+    </div>
+    @if (f.id.touched && f.id.invalid) {
+    <div class="error-message">ID is required.</div>
+
+    }
+    <div class="row">
+        <label for="name">Investment Name:</label>
+        <input type="text" id="name" formControlName="name">
+        @if (f.name.touched){
+        @if ( f.name.hasError('required')) {
+        <div class="error-message">Investment Name is required.</div>
+        }
+        @if(f.name.hasError('minlength')){
+        <div class="error-message">Investment Name must be at least 3 characters long.</div>
+        }
+        }
+
+    </div>
+
+    <div class="row">
+        <label for="type">Type:</label>
+        <select name="type" id="type" formControlName="type">
+            <option value="Equity">Equity</option>
+            <option value="Debt">Debt</option>
+            <option value="Mutual Fund">Mutual Fund</option>
+        </select>
+
+        @if (f.type.touched && f.type.hasError('required')) {
+        <small class="error-message">Type is required.</small>
+        }
+    </div>
+
+
+    <div class="row">
+        <label for="name">Amount:</label>
+        <input type="number" id="amount" formControlName="amount">
+        @if (f.amount.touched){
+        @if ( f.name.hasError('required')) {
+        <div class="error-message">Amount is required.</div>
+        }
+        @if(f.name.hasError('min')){
+        <div class="error-message">Amount must be greater than 0.</div>
+        }
+        }
+
+    </div>
+
+    <div class="row">
+        <label for="date">Purchase Date:</label>
+        <input type="date" id="purchaseDate" formControlName="purchaseDate">
+        @if (f.purchaseDate.touched){
+        @if ( f.purchaseDate.hasError('required')) {
+        <div class="error-message">Purchase date is required.</div>
+        }
+        }
+
+    </div>
+
+    <div class="row">
+        <label for="date">Current Value:</label>
+        <input type="text" id="currentValue" formControlName="currentValue">
+        @if (f.currentValue.touched){
+        @if ( f.currentValue.hasError('required')) {
+        <div class="error-message">Current Value is required.</div>
+        }
+        @if ( f.currentValue.hasError('min')) {
+        <div class="error-message">Current Value must be greater than 0</div>
+        }
+        }
+
+    </div>
+
+
+
+
+    <button type="submit">Add Investment</button>
+
+</form>

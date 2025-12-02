@@ -1,0 +1,33 @@
+<div class="card">
+    <h2>Find Inverstment by ID (Signals)</h2>
+    <div class="form-row">
+        <label for="investmentId">Investment Id</label>
+        <input type="number" id="investmentId" [value]="id() ?? ''"
+            placeholder="Enter Id"  #investmentInt  formControl="investmentForm"/>
+
+            <button [disabled]="investmentForm.invalid" (click)="onInputEvent(investmentInt)">Fetch Investment</button>
+        <hr>
+    </div>
+
+    @if (loading()) {
+    <p class="info">Loading...</p>
+    }
+
+    @if (error()) {
+    <div class="error">{{error()}}</div>
+    }
+
+    @if (investment()) {
+    <div class="result">
+        <h3>{{investment()!.name}}</h3>
+        <ul>
+            @for (field of fields(); track $index) {
+            <li><strong>{{field.label}}: </strong> {{field.value}}</li>
+            }
+        </ul>
+    </div>
+    }
+    @else {
+    <div class="muted">Enter an ID to view the investment</div>
+    }
+</div>

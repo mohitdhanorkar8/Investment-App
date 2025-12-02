@@ -1,0 +1,66 @@
+<div class="investement-page">
+    <h1>Investment Dashboard</h1>
+    <div class="summary">
+        <div class="summary-item">
+            <div class="label">Total Investments</div>
+            <div class="value">{{ store.totalInvested() | number:'1.2-2'}}</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Current Value</div>
+            <div class="value"> ₹ {{ store.totalCurrent() | number:'1.2-2'}}</div>
+        </div>
+        <div class="summary-item">
+            <div class="label">Gain / Loss</div>
+            <div class="value" [class.positive]="store.totalGain() > 0" [class.negative]="store.totalGain() < 0"> ₹{{
+                store.totalGain() | number:'1.2-2'}}</div>
+        </div>
+    </div>
+    <div class="content">
+        @if(store.isLoading()) {
+        <div class="banner banner-loading">Loading investments...</div>
+        } @else if (store.error()) {
+        <div class="banner banner-error">Error {{ store.error() }}</div>
+        } @else {
+        <div class="list">
+            @for (inv of store.investments(); track inv.id) {
+            <div class="card">
+                <div class="card-header">
+                    <div class="name">{{ inv.name }}</div>
+                    <div class="badge" [ngClass]="{
+                        'equity': inv.type === 'Equity',
+                        'debt': inv.type === 'Debt',
+                        'other': inv.type === 'Mutual Fund'
+                    }">{{ inv.type }}</div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="label">Amount Invested</div>
+                            <div class="value"> ₹ {{ inv.amount | number:'1.2-2' }}</div>
+                        </div>
+                        <div class="col">
+                            <div class="label">Current Value</div>
+                            <div class="value"> ₹ {{ inv.currentValue | number:'1.2-2' }}</div>
+                        </div>
+                        <div class="col">
+                            <div class="label">Purchase Date</div>
+                            <div class="value">{{ inv.purchaseDate | date:'mediumDate' }}</div>
+                        </div>
+                        <div class="col">
+                            <div class="label">Gain / Loss</div>
+                            <div class="value" [ngClass]="{
+                                'positive': (inv.currentValue - inv.amount) > 0,
+                                'negative': (inv.currentValue - inv.amount) < 0
+                            }">
+                                ₹ {{ (inv.currentValue - inv.amount) | number:'1.2-2' }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }@empty {
+            <div class="banner banner-empty">No investments found.</div>
+            }
+        </div>
+        }
+    </div>
+</div>

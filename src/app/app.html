@@ -1,0 +1,20 @@
+<!-- <app-find-my-investment></app-find-my-investment>
+<app-investment-list></app-investment-list> -->
+<nav class="navbar" *ngIf="showNavbar">
+    <h1 style="text-align: center;">Investment App </h1>
+    <ul>
+        <li><a routerLink="/investment-list" routerLinkActive="active">Investment List</a></li>
+        <li><a routerLink="/find-my-investment">Find My Investment</a></li>
+        <!-- <li><a routerLink="/find-my-investment">My Investment details Basic Investment Id</a></li> -->
+        <li><a routerLink="/find-my-investment">My Investment details Basic Investment Id</a></li>
+        <li><a routerLink="/add-investment-reactive">Add Investment Reactive</a></li>
+        <li><a routerLink="/add-investment"> Add Investment</a></li>
+        <li><a routerLink="/investment-signal-store"> Investment Signal Store</a></li>
+        <li  *ngIf="isLoggedIn">
+            <button class="logout-btn" (click)="logout()">Logout</button>
+        </li>
+
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

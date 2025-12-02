@@ -1,96 +1,103 @@
-/* Center the login form on the page */
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f7fc;
-    margin: 0;
-    flex-direction: column;
+/* Card container */
+.card {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff; /* Light background for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card heading */
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333333; /* Dark gray for better readability */
+}
+
+/* Form row styling */
+.form-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  color: #555555; /* Medium gray for labels */
+  font-size: 14px;
+}
+
+/* Input field styling */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc; /* Light gray border */
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff; /* White background for inputs */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effect for inputs */
+input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+  outline: none;
+}
+
+/* Submit button styling */
+button {
+  display: inline-block;
+  width: 48%;
+  padding: 12px;
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 10px 1%; /* Add spacing between buttons */
+}
+
+/* Hover effect for button */
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #cccccc; /* Disabled gray color */
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4d; /* Bright red for error messages */
+  font-size: 12px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Responsive design: form width adjusts on smaller screens */
+@media (max-width: 600px) {
+  .card {
+    width: 90%; /* Allow form to take up more space on small screens */
+    padding: 15px;
   }
-  
-  /* Style the login form box */
-  form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+
+  .form-row {
+    gap: 6px;
   }
-  
-  /* Header style for the login form */
-  h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Form field container */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Label for the input fields */
-  .form-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
-  }
-  
-  /* Style the input fields */
-  .form-group input {
-    width: 93%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    transition: border 0.3s ease-in-out;
-  }
-  
-  /* Input field focus state */
-  .form-group input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  }
-  
-  /* Style the login button */
+
   button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    width: 100%; /* Full width for buttons on smaller screens */
+    margin: 10px 0; /* Add vertical spacing for buttons */
   }
-  
-  /* Button hover effect */
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Disable button if form is invalid */
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Error message styling */
-  .error-message {
-    color: #ff4d4d;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
+}

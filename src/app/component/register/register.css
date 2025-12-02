@@ -1,0 +1,98 @@
+/* Card container */
+.card {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff; /* Light background for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Card heading */
+  .card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333; /* Dark gray for better readability */
+  }
+  
+  /* Form row styling */
+  .form-row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Label styling */
+  label {
+    font-weight: bold;
+    color: #555555; /* Medium gray for labels */
+    font-size: 14px;
+  }
+  
+  /* Input field styling */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff; /* White background for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Focus effect for inputs */
+  input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+    outline: none;
+  }
+  
+  /* Submit button styling */
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Hover effect for button */
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.02); /* Slight zoom effect */
+  }
+  
+  /* Disabled button */
+  button:disabled {
+    background-color: #cccccc; /* Disabled gray color */
+    cursor: not-allowed;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ff4d4d; /* Bright red for error messages */
+    font-size: 12px;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  /* Responsive design: form width adjusts on smaller screens */
+  @media (max-width: 600px) {
+    .card {
+      width: 90%; /* Allow form to take up more space on small screens */
+      padding: 15px;
+    }
+  
+    .form-row {
+      gap: 6px;
+    }
+  }
+  

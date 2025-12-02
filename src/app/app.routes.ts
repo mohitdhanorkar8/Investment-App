@@ -1,9 +1,13 @@
 import { Routes } from '@angular/router';
- 
+
 export const routes: Routes = [
     {
         path: 'login',
-        loadComponent: () => import('./component/login/login').then(m => m.Login),
+        loadComponent: () => import('./component/login/login').then(m => m.LoginComponent),
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./component/register/register').then(m => m.RegisterComponent), 
     },
     {
         path: 'find-my-investment',

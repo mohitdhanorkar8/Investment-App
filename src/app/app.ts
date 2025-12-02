@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
   imports: [RouterModule, CommonModule],
 })
 export class App implements OnInit {
-  showNavbar = false;
+  showNavbar = true;
   isLoggedIn: boolean = false;
 
   constructor(private router: Router) {}
@@ -24,7 +24,7 @@ export class App implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       // Hide navbar if on the login route
-      this.showNavbar = event.url !== '/login';
+      this.showNavbar = event.url !== '/register' && event.url !== '/login';
     });
   }
 

@@ -23,8 +23,17 @@ export class App implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+
       // Hide navbar if on the login route
-      this.showNavbar = event.url !== '/register' && event.url !== '/login';
+      const currentUrl = event.urlAfterRedirects;
+
+      // Hide navbar on login and register pages
+      if (currentUrl === '/login' || currentUrl === '/register') {
+        this.showNavbar = false;
+      } 
+      else {
+        this.showNavbar = true;
+      }
     });
   }
 

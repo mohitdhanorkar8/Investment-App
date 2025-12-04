@@ -19,7 +19,12 @@
       </div>
   
       <button type="submit">Register</button>
+  
+      <!-- Login Button -->
+      <button type="button" (click)="goToLogin()">Login</button>
+  
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
     </form>
   </div>
+
   

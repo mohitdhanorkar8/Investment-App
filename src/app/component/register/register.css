@@ -1,19 +1,23 @@
 /* Card container */
 .card {
     max-width: 500px;
-    margin: 50px auto;
+    width: 90%;
     padding: 20px;
     border-radius: 12px;
-    background-color: #ffffff; /* Light background for the card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-  }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
   
   /* Card heading */
   .card h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333333; /* Dark gray for better readability */
+    color: #333333;
   }
   
   /* Form row styling */
@@ -27,33 +31,33 @@
   /* Label styling */
   label {
     font-weight: bold;
-    color: #555555; /* Medium gray for labels */
+    color: #555555;
     font-size: 14px;
   }
   
   /* Input field styling */
   input {
     padding: 10px;
-    border: 1px solid #cccccc; /* Light gray border */
+    border: 1px solid #cccccc;
     border-radius: 6px;
     font-size: 14px;
-    background-color: #ffffff; /* White background for inputs */
+    background-color: #ffffff;
     transition: border-color 0.3s, box-shadow 0.3s;
   }
   
   /* Focus effect for inputs */
   input:focus {
-    border-color: #007bff; /* Blue border on focus */
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle blue glow */
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
     outline: none;
   }
   
-  /* Submit button styling */
+  /* Button styling */
   button {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 48%;
     padding: 12px;
-    background-color: #007bff; /* Primary blue color */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -61,37 +65,43 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    margin: 10px 1%;                /* Space between buttons */
   }
   
-  /* Hover effect for button */
+  /* Hover effect for buttons */
   button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.02); /* Slight zoom effect */
+    background-color: #0056b3;
+    transform: scale(1.02);
   }
   
   /* Disabled button */
   button:disabled {
-    background-color: #cccccc; /* Disabled gray color */
+    background-color: #cccccc;
     cursor: not-allowed;
   }
   
   /* Error message styling */
   .error-message {
-    color: #ff4d4d; /* Bright red for error messages */
+    color: #ff4d4d;
     font-size: 12px;
     margin-top: 10px;
     font-style: italic;
   }
   
-  /* Responsive design: form width adjusts on smaller screens */
+  /* Responsive design: Adjust form width and buttons on smaller screens */
   @media (max-width: 600px) {
     .card {
-      width: 90%; /* Allow form to take up more space on small screens */
+      width: 90%;
       padding: 15px;
     }
   
     .form-row {
       gap: 6px;
+    }
+  
+    button {
+      width: 100%;
+      margin: 10px 0;
     }
   }
   
